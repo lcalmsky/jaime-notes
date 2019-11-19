@@ -1,0 +1,3 @@
+rootProject.name = 'jaime-note'
+
+include 'jackson'
