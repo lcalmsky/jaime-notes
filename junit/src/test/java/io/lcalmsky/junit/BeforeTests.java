@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Log
 public class BeforeTests {
     @BeforeAll
-    public void setup() {
+    public static void setup() {
         log.info("@BeforeAll");
     }
 
