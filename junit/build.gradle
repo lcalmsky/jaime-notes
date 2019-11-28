@@ -7,6 +7,6 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
 
     // lombok
-    testImplementation "org.projectlombok:lombok:1.18.6"
-    testAnnotationProcessor "org.projectlombok:lombok:1.18.6"
+    testImplementation "org.projectlombok:lombok:1.18.10"
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.10"
 }
