@@ -3,6 +3,12 @@ allprojects {
     version '1.0-SNAPSHOT'
 }
 
+ext {
+    junitJupiterVersion = '5.4.2'
+    junitPlatformVersion = '1.2.0'
+    junitVintageVersion = '5.4.2'
+}
+
 subprojects {
     apply plugin: 'java'
     sourceCompatibility = 1.8
@@ -10,8 +16,16 @@ subprojects {
         mavenCentral()
     }
     dependencies {
-        testCompile group: 'junit', name: 'junit', version: '4.12'
+        // junit5
+        testImplementation "org.junit.platform:junit-platform-runner:${junitPlatformVersion}"
+        testImplementation "org.junit.vintage:junit-vintage-engine:${junitVintageVersion}"
+        testImplementation "org.junit.jupiter:junit-jupiter-migrationsupport:${junitVintageVersion}"
+        testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
+        testImplementation "org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}"
+        testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+
+        // lombok
+        testImplementation "org.projectlombok:lombok:1.18.10"
+        testAnnotationProcessor "org.projectlombok:lombok:1.18.10"
     }
 }
-
-

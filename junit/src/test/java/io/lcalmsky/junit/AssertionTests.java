@@ -36,8 +36,8 @@ public class AssertionTests {
     public void groupAssertions() {
         int[] numbers = {0, 1, 2, 3, 4};
         assertAll("numbers",
-                () -> assertEquals(numbers[0], 1),
+                () -> assertEquals(numbers[0], 0),
                 () -> assertEquals(numbers[3], 3),
-                () -> assertEquals(numbers[4], 1));
+                () -> assertEquals(numbers[4], 4));
     }
 }
