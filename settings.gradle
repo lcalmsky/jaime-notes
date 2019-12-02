@@ -2,4 +2,4 @@ rootProject.name = 'jaime-note'
 
 include 'jackson'
 include 'junit'
-
+include 'feign'

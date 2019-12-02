@@ -1,5 +1,31 @@
-sourceCompatibility = 1.8
+plugins {
+    id 'org.springframework.boot' version '2.0.8.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+jar {
+    archiveBaseName = 'feign'
+    archiveVersion = '0.1.0'
+}
+
+ext {
+    springCloudVersion = 'Finchley.RELEASE'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
 
 dependencies {
-    implementation 'org.springframework.cloud:spring-cloud-starter-feign:1.4.7.RELEASE'
+    compile("org.springframework.cloud:spring-cloud-starter-openfeign")
+    compile("org.springframework.boot:spring-boot-starter-web")
 }
