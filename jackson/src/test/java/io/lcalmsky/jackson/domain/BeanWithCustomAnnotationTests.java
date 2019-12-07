@@ -1,29 +1,36 @@
 package io.lcalmsky.jackson.domain;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Test;
+        import com.fasterxml.jackson.core.JsonProcessingException;
+        import com.fasterxml.jackson.databind.ObjectMapper;
+        import org.junit.jupiter.api.DisplayName;
+        import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.StringContains.containsString;
+        import static org.hamcrest.CoreMatchers.not;
+        import static org.hamcrest.core.StringContains.containsString;
+        import static org.junit.Assert.assertThat;
+        import static org.junit.jupiter.api.Assertions.assertAll;
 
 public class BeanWithCustomAnnotationTests {
     @Test
-    public void WhenCustomAnnotationProvided_ThenSerialize_ExpectCorrect() throws JsonProcessingException {
-        // when
+    @DisplayName("CustonAnnotation을 사용하여 직렬화하기")
+    public void givenCustomAnnotationProvided_whenSerialize_thenCorrect() throws JsonProcessingException {
+        // given
         BeanWithCustomAnnotation bean = new BeanWithCustomAnnotation();
         bean.setId(1);
         bean.setName("name");
         bean.setDate(null);
 
-        // then
+        // when
         String json = new ObjectMapper().writeValueAsString(bean);
 
-        // expected
+        // then
+        assertAll(
+                () -> assertThat(json, containsString("id")),
+                () -> assertThat(json, containsString("name")),
+                () -> assertThat(json, not(containsString("date")))
+        );
+
+        // log
         System.out.println(json);
-        assertThat(json, containsString("id"));
-        assertThat(json, containsString("name"));
-        assertThat(json, not(containsString("date")));
     }
 }
