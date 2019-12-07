@@ -1,26 +1,28 @@
 package io.lcalmsky.jackson.domain;
 
-        import com.fasterxml.jackson.core.JsonProcessingException;
-        import com.fasterxml.jackson.databind.ObjectMapper;
-        import org.junit.Test;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-        import static org.hamcrest.CoreMatchers.is;
-        import static org.hamcrest.MatcherAssert.assertThat;
-        import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BeanWithJsonCreatorTests {
     @Test
-    public void whenJsonCreatorApplied_thenDeserialize_expectCorrect() throws JsonProcessingException {
-        // when
+    @DisplayName("@JsonCreator를 이용하여 역직렬화")
+    public void givenJsonCreatorApplied_whenDeserialize_thenCorrect() throws JsonProcessingException {
+        // given
         String json = "{\"id\":1,\"theName\":\"beanName\"}";
 
-        // then
+        // when
         BeanWithJsonCreator bean = new ObjectMapper().readValue(json, BeanWithJsonCreator.class);
 
-        // expect
+        // then
+        assertEquals("beanName", bean.getName());
+        assertEquals(1, bean.getId());
+
+        // log
         System.out.println(json);
         System.out.println(bean);
-        assertEquals("beanName", bean.getName());
-        assertThat(bean.getId(), is(1));
     }
 }
