@@ -2,28 +2,29 @@ package io.lcalmsky.jackson.domain;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BeanWithSerializerTests {
     @Test
-    public void whenUsingCustomSerializer_thenWriteJson_expectCorrect() throws JsonProcessingException {
-        // when
+    @DisplayName("CustomSerializer를 사용해 역직렬화하기")
+    public void givenUsingCustomSerializer_whenWriteJson_thenCorrect() throws JsonProcessingException {
+        // given
         BeanWithSerializer beanWithSerializer = new BeanWithSerializer();
         beanWithSerializer.setName("날짜");
         beanWithSerializer.setTime(LocalDate.of(2019, 11, 15));
 
-        // then
+        // when
         String json = new ObjectMapper().writeValueAsString(beanWithSerializer);
 
-        // expected
-        assertThat(json, containsString("2019년 11월 15일"));
+        // then
+        assertTrue(json.contains("2019년 11월 15일"));
 
-        // print
+        // log
         System.out.println(json);
     }
 }
