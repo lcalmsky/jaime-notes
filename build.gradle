@@ -22,18 +22,20 @@ subprojects {
         mavenCentral()
     }
     dependencies {
-        // lombok
-        implementation "org.projectlombok:lombok:1.18.10"
-        annotationProcessor "org.projectlombok:lombok:1.18.10"
-        testImplementation "org.projectlombok:lombok:1.18.10"
-        testAnnotationProcessor "org.projectlombok:lombok:1.18.10"
+        if (project.name != "spock") {
+            // lombok
+            implementation "org.projectlombok:lombok:1.18.10"
+            annotationProcessor "org.projectlombok:lombok:1.18.10"
+            testImplementation "org.projectlombok:lombok:1.18.10"
+            testAnnotationProcessor "org.projectlombok:lombok:1.18.10"
 
-        // junit5
-        testImplementation "org.junit.platform:junit-platform-runner:${junitPlatformVersion}"
-        testImplementation "org.junit.vintage:junit-vintage-engine:${junitVintageVersion}"
-        testImplementation "org.junit.jupiter:junit-jupiter-migrationsupport:${junitVintageVersion}"
-        testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
-        testImplementation "org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}"
-        testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+            // junit5
+            testImplementation "org.junit.platform:junit-platform-runner:${junitPlatformVersion}"
+            testImplementation "org.junit.vintage:junit-vintage-engine:${junitVintageVersion}"
+            testImplementation "org.junit.jupiter:junit-jupiter-migrationsupport:${junitVintageVersion}"
+            testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
+            testImplementation "org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}"
+            testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+        }
     }
 }
