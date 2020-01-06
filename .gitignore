@@ -17,5 +17,4 @@ gradle-app.setting
 /**/build/
 /**/out/
 /node_modules/
-/package-lock.json
 /react/webpack-test/node_modules/
