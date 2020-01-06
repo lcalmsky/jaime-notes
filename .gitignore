@@ -16,3 +16,5 @@ gradle-app.setting
 /junit/out/
 /**/build/
 /**/out/
+/node_modules/
+/package-lock.json
