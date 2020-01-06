@@ -4,4 +4,5 @@ include 'jackson'
 include 'junit'
 include 'feign'
 include 'spock'
+include 'react'
 
