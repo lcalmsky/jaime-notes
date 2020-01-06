@@ -30,11 +30,11 @@ class Container extends React.Component {
                     <span>현재 카운트: </span>
                     <span>{this.state.count}</span>
                     <button onClick={
-                        () => this.setState({count: this.status.count + 1})
+                        () => this.setState({count: this.state.count + 1})
                     }> 증가
                     </button>
                     <button onClick={
-                        () => this.setState({count: this.status.count - 1})
+                        () => this.setState({count: this.state.count - 1})
                     }> 감소
                     </button>
                 </div>
