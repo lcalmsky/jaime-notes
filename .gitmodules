@@ -1,0 +1,3 @@
+[submodule "jackson"]
+	path = jackson
+	url = https://github.com/lcalmsky/jackson.git
