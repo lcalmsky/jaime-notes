@@ -1,3 +1,6 @@
 [submodule "jackson"]
 	path = jackson
 	url = https://github.com/lcalmsky/jackson.git
+[submodule "junit5"]
+	path = junit5
+	url = https://github.com/lcalmsky/junit5.git
