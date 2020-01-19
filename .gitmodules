@@ -4,3 +4,6 @@
 [submodule "junit5"]
 	path = junit5
 	url = https://github.com/lcalmsky/junit5.git
+[submodule "react"]
+	path = react
+	url = https://github.com/lcalmsky/react.git
