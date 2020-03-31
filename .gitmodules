@@ -13,3 +13,6 @@
 [submodule "feign"]
 	path = feign
 	url = https://github.com/lcalmsky/feign.git
+[submodule "jpa"]
+	path = jpa
+	url = https://github.com/lcalmsky/jpa.git

@@ -6,4 +6,5 @@ include 'feign'
 include 'spock'
 include 'react'
 include 'kafka'
+include 'jpa'
 
