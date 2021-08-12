@@ -16,3 +16,6 @@
 [submodule "jpa"]
 	path = jpa
 	url = https://github.com/lcalmsky/jpa.git
+[submodule "blog-examples"]
+	path = blog-examples
+	url = https://github.com/lcalmsky/blog-examples.git
